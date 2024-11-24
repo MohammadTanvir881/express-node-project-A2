@@ -6,7 +6,7 @@ import booksZodValidationSchema from "./books.zodValidation";
 const createBookData = async (req: Request, res: Response) => {
   try {
     const books = req.body;
-    console.log(books);
+    // console.log(books);
 
     // using zod validation
     const zodParser = booksZodValidationSchema.parse(books);
@@ -49,7 +49,7 @@ const getBooksData = async (req: Request, res: Response) => {
 const getSingleBookData = async (req: Request, res: Response) => {
   try {
     const { productId } = req.params;
-    console.log(productId);
+    // console.log(productId);
     const result = await bookServices.getSingleBookDataFromDb(productId);
 
     res.status(200).json({
